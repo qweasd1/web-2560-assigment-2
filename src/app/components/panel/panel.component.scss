@@ -1,0 +1,14 @@
+.app-panel-container {
+  background: lightgray;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.app-panel-footer {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}

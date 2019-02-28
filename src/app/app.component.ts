@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assingment2';
+
+  constructor(){
+    let t = 1;
+  }
 }

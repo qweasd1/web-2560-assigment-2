@@ -1,0 +1,30 @@
+<div *ngIf="panel.isShowDetail" style="position: relative"
+     (mousedown)="$event.preventDefault();$event.stopPropagation()">
+  <button mat-button="" style="position: absolute; right: 0px; top: 0px; z-index: 10" (click)="removeNote()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-card style="width: 300px" [style.background]="note.color">
+
+    <mat-form-field style="width: 100%">
+      <input matInput="" [(ngModel)]="note.title" type="text" placeholder="Title">
+    </mat-form-field>
+    <br>
+    <mat-form-field style="width: 100%">
+      <textarea matInput="" [(ngModel)]="note.content" rows="5" placeholder="Content"></textarea>
+    </mat-form-field>
+    <br>
+    <div>
+        <span *ngFor="let color of colorService.colors"
+              style="display: inline-block;width: 20px; height:20px; margin-right: 10px; box-shadow: gray 0px 0px 5px"
+              [style.background]="color" (click)="changeColor(color)"></span>
+    </div>
+  </mat-card>
+
+</div>
+
+
+
+
+<div [style.background]="note.color" *ngIf="!panel.isShowDetail" style="padding: 5px;text-overflow: ellipsis;max-width: 100px">
+  {{note.title}}
+</div>
